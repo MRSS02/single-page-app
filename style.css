@@ -1,0 +1,20 @@
+body {
+    background-image: url("gradient.png");
+    background-size: cover;
+}
+
+#titulos {
+    display:flex;
+    padding: 30px;
+    height: 10vh;
+}
+
+#titulos button {
+    margin: auto;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+#pag {
+    text-align: center;
+}
