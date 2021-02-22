@@ -1,11 +1,14 @@
+let onRRpage = false
+
 function enviar(x) {
-    alert(`Sua ${x} foi enviada`)
+    alert(`Sua ${x} foi enviada!`)
 }
 
 
 function change(tela) {
-    document.title=tela;
 
+    onRRpage = false
+    document.title=tela;
     document.body.style=`background-image: url("gradient.png"); background-size:cover;`
 
     function branco(botao) {
@@ -52,7 +55,7 @@ function change(tela) {
 
             <div class="perguntas">
 
-            <h2>Quantos personagens tem no Super Smash Bros. de Nintendo 64?</h2>
+            <h2>Quantos personagens existem no Super Smash Bros. de Nintendo 64 no total?</h2>
 
             <input type="number">
 
@@ -80,7 +83,7 @@ function change(tela) {
 
 
             <button onclick="enviar('resposta')" style="margin-top:40px">Enviar</button>
-            
+
 
             `;
 
@@ -92,7 +95,7 @@ function change(tela) {
 
             document.getElementById("pag").innerHTML=
             `
-            <h1 class="content">Envie a atividade para maior análise.</h1>
+            <h1 class="content">Envie uma atividade para maior análise.</h1>
 
             <input type="file">
 
@@ -121,7 +124,7 @@ function change(tela) {
 
 
         case 'GETSTICKBUGGED':
-
+            onRRpage = true
             document.getElementById("pag").innerHTML=
             `
 
@@ -139,12 +142,14 @@ function change(tela) {
             `},5000)
 
             setTimeout(function(){
-                document.body.style='background-image: url("rolled.gif"); background-size:auto';
-                document.title="GETSTICKROLLED";
-                document.getElementsByClassName("content")[0].style=`color:white`;
+                if (onRRpage) {
+                  document.body.style='background-image: url("rolled.gif"); background-size:auto';
+                  document.title="GETSTICKROLLED";
+                  document.getElementsByClassName("content")[0].style=`color:white`;
+                }
             },9500)
 
-            
+
 
         break;
     }
